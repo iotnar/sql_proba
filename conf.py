@@ -3,4 +3,4 @@
 host = "127.0.0.1"
 user = input("введите пользователя(root) - ")
 password = "root"
-database= input("Выберете базы данных (sklad) - ")
+database= "sklad" #input("Выберете базы данных (sklad) - ")
