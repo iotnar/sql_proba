@@ -8,11 +8,11 @@ import mysql.connector
 from getpass import getpass
 from mysql.connector import connect, Error
 from conf import host,user,password,database
-from func import conn
+from func import conn,show_db
 
 try:
-    conn(host,user)
-
+    conn(host,user,database)
+    show_db(database)
     # with connect(
     #     host=host,
     #     user=user,
