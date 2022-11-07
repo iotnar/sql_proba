@@ -7,12 +7,16 @@ import mysql.connector
 
 from getpass import getpass
 from mysql.connector import connect, Error
-from conf import host,user,password,database
+
+
+from conf import host,user,password,database,base
 from func import conn,show_db
 
+
 try:
-    conn(host,user,database)
-    show_db(database)
+    connection=conn(host,user,database)
+    show_db(connection,base)
+   # show_db(database,connection)
     # with connect(
     #     host=host,
     #     user=user,
