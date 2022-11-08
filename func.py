@@ -24,7 +24,7 @@ def conn(host,user,database): #подключение к базе данных �
 
     return connection
 
-
+"""Функция изменения баззы данных """
 def execute_query(connection, query):
     cursor = connection.cursor()
     try:
@@ -34,25 +34,13 @@ def execute_query(connection, query):
     except Error as err:
         print(f"Error: '{err}'")
 
-def show_db(connection,base):
-
+"""Функция чтения из базы данных"""
+def show_db(connection,query):
+    cursor = connection.cursor()
+    result = None
     try:
-        b=base
-        show_db_query = "SELECT * FROM "+b +" limit 6"
-        print(show_db_query)
-        with connection.cursor() as cursor:
-            cursor.execute(show_db_query)
-            result = cursor.fetchall()
-            for row in result:
-                print(row)
-
-    except Error as e:
-        print(e)
-
-        #     # show_db_query = "SHOW DATABASES"
-        #     # with connection.cursor() as cursor:
-        #     #
-        #     #     cursor.execute(show_db_query)
-        #     #     print("Список баз на "+host)
-        #     #     for row in cursor:
-        #     #         print(row)
+        cursor.execute(query)
+        result = cursor.fetchall()
+        return result
+    except Error as err:
+        print(f"Error: '{err}'")
