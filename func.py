@@ -2,6 +2,7 @@
 
 import mysql.connector
 from mysql import connector
+
 from mysql.connector import Error
 
 from conf import host,user,password,database
@@ -42,6 +43,16 @@ def execute_query(connection, query):
 def show_db(connection,query):
     cursor = connection.cursor()
     result = None
+    try:
+        cursor.execute(query)
+        print("uuuraaaaa")
+        result = cursor.fetchall()
+        return result
+    except Error as err:
+        print(f"Error: '{err}'")
+
+def show_db_tables(connection,query):
+    cursor = connection.cursor()
     try:
         cursor.execute(query)
         result = cursor.fetchall()

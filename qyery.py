@@ -1,5 +1,5 @@
-q0 = """SELECT * FROM zagruzka """
-q1 = """SELECT * FROM zagruzka_1 """
+q0 = """SHOW TABLES """
+q1 = """SELECT * FROM """
 q2 = """SELECT * FROM zagruzka_2 """
 q3 = """SELECT * FROM  starshie"""
 
