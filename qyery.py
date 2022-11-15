@@ -1,6 +1,10 @@
+
+# import main
+#
+# q = str(main.name_tb_bd)
 q0 = """SHOW TABLES """
 q1 = """SELECT * FROM """
-q2 = """SELECT * FROM zagruzka_2 """
+q2 = """select * from  """
 q3 = """SELECT * FROM  starshie"""
 
 
