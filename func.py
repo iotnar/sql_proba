@@ -24,6 +24,10 @@ def conn(host,user,database): #подключение к базе данных �
 
     return connection
 
+def disconn(): #отключение от базе данных на сервере
+    connection = None
+    return connection
+
 """Функция изменения баззы данных """
 def execute_query(connection, query):
     cursor = connection.cursor()
